@@ -91,29 +91,29 @@ When /^I attach the file at "([^\"]*)" to "([^\"]*)"$/ do |path, field|
 end
 
 Then /^I should see "([^\"]*)"$/ do |text|
-  assert_contain text
+  response.should contain(text)
 end
 
 Then /^I should not see "([^\"]*)"$/ do |text|
-  assert_not_contain text
+  response.should_not contain(text)
 end
 
 Then /^the "([^\"]*)" field should contain "([^\"]*)"$/ do |field, value|
-  assert_match /#{value}/, field_labeled(field).value
+  field_labeled(field).value.should =~ /#{value}/
 end
 
 Then /^the "([^\"]*)" field should not contain "([^\"]*)"$/ do |field, value|
-  assert_no_match /#{value}/, field_labeled(field).value
+  field_labeled(field).value.should_not =~ /#{value}/
 end
     
 Then /^the "([^\"]*)" checkbox should be checked$/ do |label|
-  assert field_labeled(label).checked?
+  field_labeled(label).should be_checked
 end
 
 Then /^the "([^\"]*)" checkbox should not be checked$/ do |label|
-  assert ! field_labeled(label).checked?
+  field_labeled(label).should_not be_checked
 end
 
 Then /^I should be on (.+)$/ do |page_name|
-  assert_equal path_to(page_name), URI.parse(current_url).path
+  URI.parse(current_url).path.should == path_to(page_name)
 end
