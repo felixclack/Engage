@@ -1,6 +1,6 @@
 ActionMailer::Base.smtp_settings = {
-    :address => "smtp.thoughtbot.com",
+    :address => "smtp.getengage.com",
     :port    => 25,
-    :domain  => "thoughtbot.com"
+    :domain  => "getengage.com"
 }
 
