@@ -3,7 +3,7 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
     %title Engage #{@page_title if @page_title}
-    = stylesheet_link_tag 'screen', :media => 'screen, projection'
+    = stylesheet_link_tag 'signin', :media => 'screen, projection'
     = stylesheet_link_tag 'print', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
@@ -16,12 +16,11 @@
         = render :partial => 'layouts/flashes'
         = yield
     
-    %footer
-      .eighty
-        %h3= link_to "Eighty Industries", "http://eightyindustries.com"
-        %p
-          Engage is designed and built by
-          = link_to "eightyindustries.com", "http://eightyindustries.com"
-          We are web app developers based in north east England
+      %footer
+        .eighty
+          %p
+            Engage is designed and built by
+            = link_to "eightyindustries.com", "http://eightyindustries.com"
+            We are web app developers based in north east England
           
     = render :partial => 'layouts/javascript'

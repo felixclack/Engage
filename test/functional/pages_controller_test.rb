@@ -14,8 +14,10 @@ class PagesControllerTest < ActionController::TestCase
 
       should_render_template :home
       should_render_a_form
-      
+      should_not_be_signed_in
     end
+    
   end
+    
   
 end

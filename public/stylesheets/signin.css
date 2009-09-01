@@ -1,0 +1,97 @@
+/* line 6, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+
+/* line 17, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+*:focus { outline: 0; }
+
+/* line 20, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+body { line-height: 1em; color: black; background: #fff; }
+
+/* line 23, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+ol, ul { list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+/* line 27, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+table { border-collapse: separate; border-spacing: 0; vertical-align: middle; }
+
+/* line 30, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+/* line 33, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+q, blockquote { quotes: "" ""; }
+/* line 101, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+q:before, q:after, blockquote:before, blockquote:after { content: ""; }
+
+/* line 36, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/general/_reset.sass */
+img a { border: none; }
+
+/* line 12, sass/signin.sass */
+body { width: 100%; background: #fff; display: inline; float: left; border-top: 10px solid #d5e6ed; font: 62.5%/1.5em "Lucida Grande", verdana, sans-serif; }
+/* line 19, sass/signin.sass */
+body #wrapper { width: 800px; margin: 0 auto; }
+/* line 23, sass/signin.sass */
+body #wrapper header { padding: 1em 0 1.25em 0; color: #fff; display: inline; float: left; width: 800px; }
+/* line 29, sass/signin.sass */
+body #wrapper header h1 { line-height: normal; float: left; width: auto; margin-right: 1em; font-size: 48px; letter-spacing: -3px; }
+/* line 37, sass/signin.sass */
+body #wrapper header h1 a { color: #333333; text-decoration: none; display: block; }
+/* line 18, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/compass/stylesheets/compass/utilities/links/_link_colors.sass */
+body #wrapper header h1 a:hover { color: #333333; }
+/* line 42, sass/signin.sass */
+body section { display: inline; float: left; padding: 1.5em 0; }
+/* line 46, sass/signin.sass */
+body section h2 { display: inline; float: left; font-weight: bold; font-size: 1.25em; margin: 0 4em 0 0; }
+/* line 52, sass/signin.sass */
+body section form { display: inline; float: left; clear: right; padding: 1px 0 0 0; width: 800px; }
+/* line 58, sass/signin.sass */
+body section form .text_field { float: left; }
+/* line 61, sass/signin.sass */
+body section form label { font-size: 1.5em; margin: 0 1em 0 0; font-weight: bold; }
+/* line 66, sass/signin.sass */
+body section form input { font-size: 1.25em; padding: .5em; margin: 1px 2.5em 0 0; background: #fff; border: 1px solid #e7e7e7; width: auto; }
+/* line 74, sass/signin.sass */
+body section form input#session_email { width: 230px; }
+/* line 77, sass/signin.sass */
+body section form .submit_field { float: right; }
+/* line 79, sass/signin.sass */
+body section form .submit_field input { float: left; width: auto; padding: .6em 1.5em; font-weight: bold; font-size: 1.2em; cursor: pointer; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; border: 1px solid #e7e7e7; background: #f3f3f3; color: #333; letter-spacing: -1px; margin: 1px; }
+/* line 92, sass/signin.sass */
+body section form .submit_field input:hover { background: #fff; color: #55aed4; border-width: 2px; margin: 0; }
+/* line 98, sass/signin.sass */
+body section p { display: inline; float: left; font-size: .85em; }
+/* line 102, sass/signin.sass */
+body section p.overview { font-size: 20px; letter-spacing: -0.3px; margin: 1em 0 0 0; }
+/* line 107, sass/signin.sass */
+body section strong.highlight { padding: 0; font-weight: normal; color: #000; background: #faffa0; }
+/* line 113, sass/signin.sass */
+body section #features { display: inline; float: left; margin: 0 0 1em 0; }
+/* line 117, sass/signin.sass */
+body section #features .scrollable { width: 800px; height: 280px; overflow: hidden; position: relative; margin: .5em auto 0; border: 1px solid #cadae0; }
+/* line 125, sass/signin.sass */
+body section #features .scrollable .items { width: 20000em; position: absolute; clear: both; }
+/* line 130, sass/signin.sass */
+body section #features .scrollable .items div { display: inline; float: left; width: 800px; height: 280px; }
+/* line 135, sass/signin.sass */
+body section #features .feature { position: relative; }
+/* line 138, sass/signin.sass */
+body section #features .feature img { width: 800px; height: 280px; margin: 0; }
+/* line 143, sass/signin.sass */
+body section #features .feature p { position: absolute; bottom: 0; left: 0; width: 780px; padding: 10px; background: #d5e6ed; font-size: .9em; border-top: 1px solid #cadae0; }
+/* line 153, sass/signin.sass */
+body section #features ul.navi { display: inline; float: left; width: 800px; text-align: center; margin: 0 auto; }
+/* line 159, sass/signin.sass */
+body section #features ul.navi li { display: inline; }
+/* line 162, sass/signin.sass */
+body section #features ul.navi li a { text-align: center; }
+/* line 165, sass/signin.sass */
+body section .calltoaction { clear: left; display: inline; float: left; margin-right: 10px; width: 950px; }
+/* line 97, ../../vendor/gems/chriseppstein-compass-0.8.12/frameworks/blueprint/stylesheets/blueprint/modules/_grid.sass */
+* html body section .calltoaction { overflow-x: hidden; }
+/* line 169, sass/signin.sass */
+body section .columns { display: inline; float: left; clear: both; width: 800px; }
+/* line 175, sass/signin.sass */
+body section .columns .column .highlight { width: 33%; float: left; }
+/* line 179, sass/signin.sass */
+body footer { border-top: 1px solid #ccc; width: 800px; float: left; padding: 1em 0; margin-top: 2em; }
+/* line 186, sass/signin.sass */
+body footer p { text-indent: -9999px; background: url(/images/footer_logo.png) no-repeat 0 0; width: 68px; height: 26px; }

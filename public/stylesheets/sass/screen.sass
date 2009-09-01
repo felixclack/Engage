@@ -1,8 +1,32 @@
-@import blueprint.sass
-@import blueprint/modules/scaffolding.sass
-@import compass/reset.sass
+!blueprint_grid_columns = 24
+!blueprint_grid_width = 30px
+!blueprint_grid_margin = 10px
 
-+blueprint
-// Remove the scaffolding when you're ready to start doing visual design.
-// Or leave it in if you're happy with how blueprint looks out-of-the-box
-+blueprint-scaffolding
+!font_colour          = #333
+!base_colour          = #fff
+!link_colour          = #000
+
+//!company_color        = #007b80
+!company_color        = #006fbb
+
+@import compass/reset.sass
+@import compass/utilities.sass
+@import blueprint/screen.sass
+
+=rounded-corners(!radius = 15px, !border_colour = #d8d8d8)
+  :-moz-border-radius = !radius
+  :-webkit-border-radius = !radius
+  :border-radius = !radius
+  :border = 1px solid !border_colour
+
+=gradient(!type = linear, !startpos = left top, !endpos = left bottom, !startcolor = from(#c9c9c9), !endcolor = to(#ff0000), !pointpos = 0.6, !pointcolor = #a1a1a1)
+  :background-image = :-webkit-gradient(!type, !startpos, !endpos, !startcolor, !endcolor, color-stop(!pointpos, !pointcolor))
+  
+=round-top(!radius = 5px, !border_colour = #ddd)
+  :-moz-border-radius-topright = !radius
+  :-webkit-border-top-right-radius = !radius
+  :border-top-right-radius = !radius
+  :-moz-border-radius-topleft = !radius
+  :-webkit-border-top-left-radius = !radius
+  :border-top-left-radius = !radius
+  :border = 1px solid !border_colour

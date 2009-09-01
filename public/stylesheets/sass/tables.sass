@@ -1,0 +1,89 @@
+table
+  +column(17)
+  :margin 0 0 1em 0
+  
+  thead
+  
+    tr
+      +column(17)
+      :border-bottom 1px solid #999
+      
+      th
+        +column(4)
+        :font-weight bold
+    
+  tr
+    +column(17)
+    :padding .5em
+    :border-bottom 1px solid #ddd
+    
+    &.odd
+      
+    &.even
+      :background #ebf5fc
+  
+    td
+      +column(4)
+      
+  th.name, td.name
+    +span(5)
+    
+  th.email, td.email
+    +span(6)
+    
+  th.login, td.login
+    +span(3)
+    
+  th.actions, td.actions
+    +span(2)
+  
+  th.members, td.members
+    +span(1)
+    
+  th.address, td.address
+    +span(6)
+    
+  th.phone, td.phone
+    +span(3)
+  
+table.households
+  +column(17)
+  :margin 0 0 1em 0
+
+  thead
+
+    tr
+      +column(17)
+      :border-bottom 1px solid #999
+
+      th
+        +column(4)
+        :font-weight bold
+
+  tr
+    +column(17)
+    :padding .5em
+    :border-bottom 1px solid #ddd
+
+    &.odd
+
+    &.even
+      :background #ebf5fc
+
+    td
+      +column(4)
+
+  th.name, td.name
+    +span(3)
+
+  th.actions, td.actions
+    +span(2)
+
+  th.members, td.members
+    +span(2)
+
+  th.address, td.address
+    +span(6)
+
+  th.phone, td.phone
+    +span(3)

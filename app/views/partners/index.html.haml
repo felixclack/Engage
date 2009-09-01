@@ -1,0 +1,5 @@
+%h1 Partners
+
+%ul
+  - for partner in @partners
+    %li= link_to partner.full_name, partner

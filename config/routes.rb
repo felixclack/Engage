@@ -1,16 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.resource  :dashboard, :only => :show  
+  map.resources :users
+  map.resources :partners
+  map.resources :accounts,  :has_many => :users
 
   map.with_options :controller => 'pages' do |page|
-    page.home '/', :action => "show", :id => 'home'
+    page.home '/home', :action => "show", :id => 'home'
   end
   
-  map.root :controller => 'pages', :action => 'show', :id => 'home'
-
-  # See how all your routes lay out with "rake routes"
-
-  # map.with_options :controller => 'sessions'  do |m|
-  #   m.login  '/login',  :action => 'new'
-  #   m.logout '/logout', :action => 'destroy'
-  # end
+  map.root :dashboard
 
 end

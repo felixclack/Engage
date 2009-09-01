@@ -3,7 +3,7 @@
   %head
     %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "Content-type" }
     %title Engage #{@page_title if @page_title}
-    = stylesheet_link_tag 'screen', :media => 'screen, projection'
+    = stylesheet_link_tag 'engage', :media => 'screen, projection'
     = stylesheet_link_tag 'print', :media => 'print'
     /[if IE]
       = stylesheet_link_tag 'ie', :media => 'screen, projection'
@@ -11,19 +11,38 @@
     #wrapper
       %header
         %h1= link_to "Engage", root_path
+        
+        %nav
+          %ul
+            %li.search
+              - form_tag("/search", :method => :get) do
+                = text_field_tag :query, "Search for a customer"
+                %button Go
+                  
+            %li= link_to "Partners", partners_path
+            %li= link_to "Households"
+
+            - if current_user.admin
+              %li= link_to "Core Team", users_path
+
+            %li= link_to "My Profile", edit_user_path(current_user)
+            %li= link_to "Sign out", sign_out_path
+
+        %p#current_user== Signed in as #{current_user.full_name}
     
-      %section
-        = render :partial => 'layouts/flashes'
+    %section#content
+      = render :partial => 'layouts/flashes'
+      %section#main
         = yield
-        = render :partial => 'layouts/javascript'
+      
+      %aside
+        = yield :sidebar
     
     %footer
       .eighty
-        %h3
-          %a{ :href => "http://eightyindustries.com" }
-            Eighty Industries
         %p
           Engage is designed and built by
-          %a{ :href => "http://eightyindustries.com" }
-            eightyindustries.com
+          = link_to "eightyindustries.com", "http://eightyindustries.com"
           We are a consultancy and web app developers based in north east England
+          
+    = render :partial => 'layouts/javascript'

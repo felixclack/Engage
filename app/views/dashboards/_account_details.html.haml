@@ -1,0 +1,5 @@
+%section.account_details
+  %h1= current_account.name.titleize
+  = image_tag current_user.avatar.url(:thumb)
+  %h2= current_user.full_name
+  %h3= mail_to current_user.email

@@ -1,0 +1,54 @@
+.button
+  +float-left
+  :clear left
+  :margin .75em .5em .5em 0
+  
+  a, button, span
+    +rounded-corners(5px, #ddd)
+    :background #f7f7f7
+    +float-left
+    :padding .5em 1em
+    :line-height 1.5em
+    :text-align center
+    :text-decoration none !important
+    :margin 1px
+    :font-size .8em
+    :font-weight bold
+    :color #6db4d3
+    :font-family Helvetica Neue, Arial, Helvetica, sans-serif
+    :cursor pointer
+  
+    &:link, &:visited
+      :background #f7f7f7
+    
+    &:hover, &:active
+      :background #fafafa
+      /:color #777
+      :border-width 2px
+      :margin 0
+
+.errorExplanation
+  :color red
+  
+.fieldWithErrors
+  :float left
+  :width auto
+      
+  label
+    +span(3)
+    :display inline-block
+    :text-align right
+    :padding-right 1em
+    :color red
+    
+  input
+    :font-size 18px
+    :margin-bottom .5em
+    :padding .2em
+    :border 1px solid red
+  
+    &.disabled
+      :cursor default
+      :border-width 1px
+      :color #ccc
+      :margin 1px

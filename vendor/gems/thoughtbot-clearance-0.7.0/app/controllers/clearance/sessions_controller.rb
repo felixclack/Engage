@@ -3,6 +3,8 @@ class Clearance::SessionsController < ApplicationController
 
   protect_from_forgery :except => :create
   filter_parameter_logging :password
+  
+  layout 'signin'
 
   def new
     render :template => 'sessions/new'

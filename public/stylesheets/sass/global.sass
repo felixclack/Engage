@@ -1,0 +1,261 @@
+body
+  :background #fff
+  :color #333
+  :font 62.5%/1.5em "Lucida Grande", verdana, sans-serif
+
+a
+  +link-colors(#6db4d3,#6db4d3)
+  :text-decoration none
+  
+h1
+  :font-size 2em
+
+h2
+  :font-size 1.8em
+  
+h3
+  :font-size 1.4em
+  
+#wrapper
+  :width 100%  
+  :margin-bottom 1em
+  :border-bottom 4px solid #cee6f8
+  :background #ebf5fc
+  +float-left
+  :margin 0 0 1em 0
+
+  header
+    :margin 0 auto
+    :padding .75em 0 .5em 0
+    :color #fff
+    +span(24)
+    :display block
+
+    h1
+      :font-size 18px
+      :line-height normal
+      :float left
+      :width auto
+      :margin 0 1em 0 0
+      
+      a
+        +link-colors(#000,#6db4d3)
+        :text-decoration none
+        :letter-spacing -1px
+      
+    p#current_user
+      :color #333
+      :margin .25em 0 0 0
+      +float-right
+        
+    ul
+      +no-bullets
+      +float-right
+      :margin 0 0 0 1.5em
+
+      li
+        :list-style-type none
+        :display block
+        :float left
+        :text-align center
+        :border-right 1px #ddd solid
+        :margin .3em 0 0 0
+
+        a
+          :display block
+          :padding 0 1em
+          :text-decoration none
+          :font-weight normal
+
+          &:hover
+            :color #333
+      
+        &.search
+          :border none
+          :margin 0 .5em 0 0
+          
+          input
+            :border 1px solid #ccc
+            :padding .2em
+      
+        &:last-child
+          :border-right none
+          
+section#content
+  :margin 0 auto
+  :clear left
+  +column(24,true)
+  :display block
+  
+  section#main
+    :margin 0
+    +column(17)
+    :margin-bottom 2em
+        
+    img
+      :width 48px
+      :height 48px
+      :border 1px solid #999
+      :margin 0 15px 5px 0
+    
+    .author
+      +float-left
+      :font-weight bold
+      :font-size 1.1em
+    
+    .time
+      +float-right
+      :width auto
+      :font-size .9em
+      :color #aaa
+    
+    .actions
+      +float-right
+      :font-size 10px
+      :text-transform uppercase
+      :margin 0 0 0 .5em
+      
+      a
+        :text-decoration none
+        :margin 0 0 0 .5em
+        
+        &:link, &:visited
+        
+        &:hover, &:active
+          :text-decoration underline
+  
+    .note
+      :border-top 1px solid #e5e5e5
+
+    h1
+      :margin .5em .5em .25em .5em
+      +float-left
+    
+    p
+      :clear both
+          
+    form
+      :margin 0 .5em .5em .5em
+      +float-left
+      
+      label
+        +span(3)
+        :display inline-block
+        :text-align right
+        :padding-right 1em
+
+      input[type=text]
+        :font-size 18px
+        :margin-bottom .5em
+        :padding .2em
+        :border 1px solid #999
+
+      select
+        :margin-bottom 1em
+
+      button
+        +float-right
+        :font-size 24px
+        :clear right
+        :margin-top 1em
+
+  aside
+    +span(6)
+    +float-right
+    :padding .5em 0 .5em 1em
+    
+    section + section
+      :margin 1em 0 0 0
+      
+    section
+      +column(6)
+      
+      &.account_details
+      
+        h1
+          :font-weight bold
+          :line-height normal
+          :margin-bottom .5em
+          :font-size 1.5em
+    
+        h2
+          :font-size 1.2em
+        
+        h3
+          :font-size 1em
+
+        
+        strong
+          :font-weight bold
+      
+        img
+          :border 1px solid #999
+          :margin 0 10px 5px 0
+          +float-left
+      
+      p, dt, dd
+        :font-size .9em
+        :color #777
+        +float-left
+        :clear both
+  
+      dt
+        :font-weight bold
+        :color #555
+  
+      dd
+        :clear none
+        
+      dd + dd
+        :clear both
+        
+      &.household
+        h1
+          :margin-bottom 0
+
+footer
+  :border-top 1px solid #ccc
+  +span(24)
+  :clear left
+  :padding 1em 0
+  :margin 2em auto 0
+  :display block  
+  
+  p
+    :text-indent -9999px
+    :background url(/images/footer_logo.png) no-repeat 0 0
+    :width 68px
+    :height 26px
+
+#search
+  +column(17)
+  :padding .75em .5em
+  :margin 0 0 1em 0
+  :border-top 1px solid #999
+  
+  ul
+    :list-style-type none
+    :margin .3em 0 0 .5em
+    +float-left
+    
+    li
+      +float-left
+      :margin 0 .5em 0 0
+      
+      a
+        :text-decoration none
+        +link-colors(#6db4d3, #111)
+  
+  form
+    +float-right
+    :margin 0 .5em 0 0
+    
+    input
+      :border 1px solid #ccc
+      :padding .35em
+
+#spinner
+  :margin 1.3em .6em 0 .6em
+  :width 16px
+  :height 16px
+  :border 0
