@@ -3,3 +3,8 @@
 %ul
   - for partner in @partners
     %li= link_to partner.full_name, partner
+
+= link_to "Add new partner", new_partner_path
+    
+- content_for :sidebar do
+  = render '/dashboards/account_details'

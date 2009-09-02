@@ -12,6 +12,8 @@ class PartnersControllerTest < ActionController::TestCase
       @user.confirm_email!
       sign_in_as @user
     end
+    
+    should_be_signed_in_as { @user }
   
     context "GET :new" do
       setup do
@@ -25,8 +27,6 @@ class PartnersControllerTest < ActionController::TestCase
       should "assign partner to account" do
         assert_equal @account, assigns(:partner).account
       end
-      
-      should_be_signed_in_as { @user }
       
     end
     
@@ -64,6 +64,17 @@ class PartnersControllerTest < ActionController::TestCase
       should_render_template :index
       should_assign_to(:partners) { [@partner] }
     end
+    
+    context "GET :show" do
+      setup do
+        @partner = Factory(:partner, :account => @account)
+        get :show, :id => @partner.id
+      end
+
+      should_render_template :show
+      should_assign_to(:partner) { @partner }
+    end
+    
 
   end
 

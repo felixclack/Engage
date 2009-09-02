@@ -1,0 +1,24 @@
+- @page_title = @partner.full_name
+
+        
+- content_for :sidebar do
+  %section.contact_details
+    %h1.name= h @partner.full_name
+    = image_tag @partner.avatar.url(:thumb)
+    %dl
+      %dt Email:&nbsp;
+      %dd= mail_to @partner.email unless @partner.email =~ /example.com/i
+      - %w(phone).each do |value|
+        %dt== #{value.titleize}: &nbsp;
+        %dd= @partner.send(value) || "n/a"
+        
+    = link_to "Edit", edit_partner_path(@partner)
+    = link_to "Delete", @partner, :method => :delete, :confirm => "Are you sure?"
+    
+    %br
+      
+    %h3.tags
+      %strong Tags: 
+            
+    
+    

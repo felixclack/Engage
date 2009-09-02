@@ -80,15 +80,18 @@ h3
       
         &:last-child
           :border-right none
-          
-section#content
+
+.container
   :margin 0 auto
-  :clear left
-  +column(24,true)
+  +span(24)
+  :display block
+  
+section#content
+  :float left
+  +span(24)
   :display block
   
   section#main
-    :margin 0
     +column(17)
     :margin-bottom 2em
         
@@ -128,8 +131,7 @@ section#content
       :border-top 1px solid #e5e5e5
 
     h1
-      :margin .5em .5em .25em .5em
-      +float-left
+      :margin .5em 0 .25em
     
     p
       :clear both
@@ -163,12 +165,13 @@ section#content
     +span(6)
     +float-right
     :padding .5em 0 .5em 1em
+    :margin-bottom 2em
     
     section + section
       :margin 1em 0 0 0
       
     section
-      +column(6)
+      +column(6, true)
       
       &.account_details
       
@@ -192,6 +195,9 @@ section#content
           :border 1px solid #999
           :margin 0 10px 5px 0
           +float-left
+          
+      dl
+        
       
       p, dt, dd
         :font-size .9em

@@ -9,6 +9,10 @@ class CreatePartners < ActiveRecord::Migration
       t.datetime    :deleted_at
       t.integer     :account_id
       t.integer     :created_by
+      t.string      :avatar_file_name
+      t.string      :avatar_content_type
+      t.integer     :avatar_file_size
+      t.datetime    :avatar_updated_at
       t.timestamps
     end
     

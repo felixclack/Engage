@@ -13,4 +13,6 @@ class UserTest < ActiveSupport::TestCase
   should_not_allow_mass_assignment_of :account
   
   should_allow_mass_assignment_of :full_name
+  
+  should_have_attached_file :avatar
 end

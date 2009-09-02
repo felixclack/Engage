@@ -23,4 +23,8 @@ class PartnersController < ApplicationController
     redirect_to @partner
   end
   
+  def show
+    @partner = current_account.partners.find(params[:id])
+  end
+  
 end

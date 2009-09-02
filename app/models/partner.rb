@@ -24,4 +24,10 @@ class Partner < ActiveRecord::Base
   
   belongs_to :account
   
+  validates_presence_of :account
+  
+  has_attached_file :avatar, 
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" }, 
+                    :default_url => "/images/default_:style_avatar.jpg"
+  
 end

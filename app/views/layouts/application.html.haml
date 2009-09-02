@@ -28,15 +28,15 @@
             %li= link_to "My Profile", edit_user_path(current_user)
             %li= link_to "Sign out", sign_out_path
 
-        %p#current_user== Signed in as #{current_user.full_name}
-    
-    %section#content
-      = render :partial => 'layouts/flashes'
-      %section#main
-        = yield
+
+    .container
+      %section#content
+        = render :partial => 'layouts/flashes'
+        %section#main
+          = yield
       
-      %aside
-        = yield :sidebar
+        %aside
+          = yield :sidebar
     
     %footer
       .eighty
