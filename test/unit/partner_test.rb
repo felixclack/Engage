@@ -38,5 +38,13 @@ class PartnerTest < ActiveSupport::TestCase
     should_change("the partner count", :from => 1, :to => 0) { Partner.count }
     should_not_change("the with deleted partner count") { Partner.count_with_destroyed }
   end
+  
+  should "convert a natural language dob into a date object" do
+    @partner.dob = "18th June 1980"
+    @partner.dob.should == Date.new(1980, 6, 18)
+    
+    @partner.dob = "25 years ago"
+    @partner.dob.should == 25.years.ago.to_date
+  end
     
 end

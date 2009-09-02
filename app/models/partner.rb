@@ -45,8 +45,6 @@ class Partner < ActiveRecord::Base
 
   is_paranoid
   
-  
-  
   private
     def partner_and_creator_have_same_account
       if creator

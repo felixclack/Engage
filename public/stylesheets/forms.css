@@ -1,20 +1,29 @@
 /*
 Sass::SyntaxError: Undefined mixin 'float-left'.
-on line 2 of /Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass
+on line 4 of /Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass
 
-1: .button
-2:   +float-left
-3:   :clear left
-4:   :margin .75em .5em .5em 0
+1: section#main
+2:   form
+3:     :margin 0 .5em .5em .5em
+4:     +float-left
 5:   
-6:   a, button, span
-7:     +rounded-corners(5px, #ddd)
-8:     :background #f7f7f7
+6:     label
+7:       +span(3)
+8:       :display inline-block
+9:       :text-align right
+10:       :padding-right 1em
 
 
 Backtrace:
-/Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass:2
+/Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass:4
 /Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/mixin_node.rb:27:in `_perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:156:in `perform'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:200:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:200:in `map'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:200:in `perform_children'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:191:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/rule_node.rb:156:in `perform!'
+/Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:179:in `_perform'
 /Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:156:in `perform'
 /Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:200:in `perform_children'
 /Library/Ruby/Gems/1.8/gems/haml-2.2.2/lib/sass/tree/node.rb:200:in `map'
@@ -87,4 +96,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Sass::SyntaxError: Undefined mixin 'float-left'.\A on line 2 of /Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass\A \A 1: .button\A 2:   +float-left\A 3:   :clear left\A 4:   :margin .75em .5em .5em 0\A 5:   \A 6:   a, button, span\A 7:     +rounded-corners(5px, #ddd)\A 8:     :background #f7f7f7\A "; }
+  content: "Sass::SyntaxError: Undefined mixin 'float-left'.\A on line 4 of /Users/felix/Sites/reengage/public/stylesheets/sass/forms.sass\A \A 1: section#main\A 2:   form\A 3:     :margin 0 .5em .5em .5em\A 4:     +float-left\A 5:   \A 6:     label\A 7:       +span(3)\A 8:       :display inline-block\A 9:       :text-align right\A 10:       :padding-right 1em\A "; }
