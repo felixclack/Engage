@@ -57,7 +57,7 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "GET :index" do
       setup do
-        @partner = Factory(:partner, :account => @account)
+        @partner = Factory(:partner, :account => @account, :creator => @user)
         get :index
       end
 
@@ -67,7 +67,7 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "GET :show" do
       setup do
-        @partner = Factory(:partner, :account => @account)
+        @partner = Factory(:partner, :account => @account, :creator => @user)
         get :show, :id => @partner.id
       end
 

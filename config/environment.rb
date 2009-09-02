@@ -30,6 +30,10 @@ Rails::Initializer.run do |config|
              :lib => 'compass',
              :source => 'http://gems.github.com',
              :version => '>= 0.8.12'
+             
+  config.gem "semanticart-is_paranoid", 
+             :lib => 'is_paranoid',
+             :source => 'http://gems.github.com'
   
   config.load_paths += Dir.glob(File.join(RAILS_ROOT, 'vendor', 'gems', '*', 'lib'))
 

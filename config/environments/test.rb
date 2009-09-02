@@ -29,6 +29,11 @@ config.gem 'thoughtbot-shoulda',
            :lib => 'shoulda', 
            :source => 'http://gems.github.com', 
            :version => '>= 2.10.2'
+           
+config.gem 'jeremymcanally-matchy',
+           :lib => 'matchy',
+           :source => 'http://gems.github.com'
+           
 config.gem 'jtrupiano-timecop',
            :version => '0.2.1',
            :source => 'http://gems.github.com',

@@ -13,6 +13,8 @@ class PartnersController < ApplicationController
   def create
     @partner = current_account.partners.build(params[:partner])
     
+    @partner.creator = current_user
+    
     if @partner.invalid?
       flash[:error] = 'Something went wrong'
       render :new and return

@@ -8,7 +8,7 @@
     %dl
       %dt Email:&nbsp;
       %dd= mail_to @partner.email unless @partner.email =~ /example.com/i
-      - %w(phone).each do |value|
+      - %w(mobile_phone home_phone twitter facebook).each do |value|
         %dt== #{value.titleize}: &nbsp;
         %dd= @partner.send(value) || "n/a"
         
