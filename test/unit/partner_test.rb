@@ -13,6 +13,7 @@ class PartnerTest < ActiveSupport::TestCase
   should_validate_presence_of :first_name, :message => "first name is required"
   should_validate_presence_of :account
   should_validate_presence_of :creator
+  should_validate_presence_of :state
   
   should "validate creator and partner belong to the same account" do
     new_account = Factory(:account, :name => "Another Account")
@@ -22,11 +23,13 @@ class PartnerTest < ActiveSupport::TestCase
     @partner.invalid?.should be(true)
   end
   
-  should_allow_mass_assignment_of :full_name, :mobile_phone, :home_phone, :email, :title, :twitter, :facebook, :dob
+  should_allow_mass_assignment_of :full_name, :mobile_phone, :home_phone, :email, :title, :twitter, :facebook, :dob, :gender
   should_not_allow_mass_assignment_of :account, :created_by
   
   should_belong_to :account
   should_belong_to :creator
+  should_belong_to :title
+  should_belong_to :gender
   
   should_have_attached_file :avatar
   

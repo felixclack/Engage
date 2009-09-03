@@ -1,15 +1,10 @@
 %h1 New partner
 
 - semantic_form_for @partner do |form|
-  - form.inputs :name => "Main details" do
-    = form.input  :title, :as => :select, :collection => ["Mr", "Mrs", "Miss", "Ms", "Dr", "Rev", "Other"], :required => false
-    = form.input  :full_name
-    = form.input  :email
-    = form.input  :dob,           :required => false, :as => :string
-    = form.input  :mobile_phone,  :required => false
-    = form.input  :home_phone,    :required => false
-    = form.input  :twitter,       :required => false
-    = form.input  :facebook,      :required => false
-    = form.input  :avatar,        :required => false
+  = render :partial => 'fields', :locals => { :form => form }
   
   = form.buttons
+  
+
+- content_for :sidebar do
+  = render 'dashboards/account_details'

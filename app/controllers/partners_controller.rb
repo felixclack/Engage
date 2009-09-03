@@ -1,9 +1,10 @@
 class PartnersController < ApplicationController
   
   before_filter :authenticate
+  before_filter :load_partner, :only => [:show, :edit]
   
   def index
-    @partners = current_account.partners
+    @partners = current_account.partners.paginate(:page => params[:page])
   end
   
   def new
@@ -26,7 +27,14 @@ class PartnersController < ApplicationController
   end
   
   def show
-    @partner = current_account.partners.find(params[:id])
   end
+  
+  def edit
+  end
+  
+  protected
+    def load_partner
+      @partner = current_account.partners.find(params[:id])
+    end
   
 end

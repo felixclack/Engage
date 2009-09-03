@@ -75,7 +75,16 @@ class PartnersControllerTest < ActionController::TestCase
       should_assign_to(:partner) { @partner }
     end
     
+    context "GET :edit" do
+      setup do
+        @partner = Factory(:partner, :account => @account, :creator => @user)
+        get :edit, :id => @partner.id
+      end
 
+      should_render_template :edit
+      should_assign_to(:partner) { @partner }
+    end
+    
   end
 
 end

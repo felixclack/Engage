@@ -34,6 +34,10 @@ Rails::Initializer.run do |config|
   config.gem "semanticart-is_paranoid", 
              :lib => 'is_paranoid',
              :source => 'http://gems.github.com'
+             
+  config.gem "rubyist-aasm",
+             :lib => "aasm",
+             :source => 'http://gems.github.com'
   
   config.load_paths += Dir.glob(File.join(RAILS_ROOT, 'vendor', 'gems', '*', 'lib'))
 

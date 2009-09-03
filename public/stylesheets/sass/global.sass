@@ -16,6 +16,9 @@ h2
 h3
   :font-size 1.4em
   
+p
+  :font-size 1.2em
+  
 #wrapper
   :width 100%  
   :margin-bottom 1em
@@ -135,6 +138,10 @@ section#content
     
     p
       :clear both
+      
+    table
+      :clear left
+      
 
   aside
     +span(6)
@@ -148,7 +155,7 @@ section#content
     section
       +column(6, true)
       
-      &.account_details
+      &.account_details, &.contact_details
       
         h1
           :font-weight bold

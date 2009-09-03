@@ -1,0 +1,17 @@
+- form.inputs :name => "Essential info" do
+  = form.input :title,    :collection => Title.select_options(:order => "created_at ASC"), :required => false
+  = form.input :full_name
+  = form.input :email
+
+- form.inputs :name => "About this person" do
+  = form.input :gender, :collection => Gender.select_options, :required => false
+  = form.input :dob,    :required => false, :as => :string
+  = form.input :avatar, :required => false
+
+- form.inputs :name => "Extra contact info" do
+  = form.input :mobile_phone, :required => false
+  = form.input :home_phone,   :required => false
+
+- form.inputs :name => "Social media" do
+  = form.input :twitter,  :required => false
+  = form.input :facebook, :required => false

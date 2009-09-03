@@ -1,10 +1,10 @@
 # == Schema Information
-# Schema version: 20090830141104
+# Schema version: 20090903180253
 #
 # Table name: partners
 #
 #  id                  :integer(4)      not null, primary key
-#  title               :string(255)
+#  title_id            :integer(4)
 #  first_name          :string(255)
 #  middle_names        :string(255)
 #  last_name           :string(255)
@@ -26,16 +26,20 @@
 #
 
 class Partner < ActiveRecord::Base
+  include AASM
   
-  attr_accessible :full_name, :email, :mobile_phone, :home_phone, :title, :twitter, :facebook, :dob
+  attr_accessible :full_name, :email, :mobile_phone, :home_phone, :title, :twitter, :facebook, :dob, :title, :gender
   
   acts_as_human :require_last_name => false
   
   belongs_to :account
   belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
+  belongs_to :title
+  belongs_to :gender
   
   validates_presence_of :account
   validates_presence_of :creator
+  validates_presence_of :state
   
   validate :partner_and_creator_have_same_account
   
@@ -44,6 +48,18 @@ class Partner < ActiveRecord::Base
                     :default_url => "/images/default_:style_avatar.jpg"
 
   is_paranoid
+  
+  # AASM
+
+  aasm_column :state
+
+  aasm_initial_state :guest
+
+  aasm_state :guest
+  aasm_state :service_active
+  aasm_state :connect_group_active
+  aasm_state :ministry_active
+  aasm_state :leadership_active
   
   private
     def partner_and_creator_have_same_account

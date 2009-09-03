@@ -1,10 +1,32 @@
-%h1 Partners
+%section
+  %h1 Partners
+  
+  - if current_account.partners.empty?
+    %h2 There are no partners in this account yet.
 
-%ul
-  - for partner in @partners
-    %li= link_to partner.full_name, partner
+  - else
 
-= link_to "Add new partner", new_partner_path
+    %ul#search
+      - ('A'..'Z').each do |letter|
+        = letter
+        /%li= link_to l, search_customers_path(:query => l)
+
+    - paginated_section @partners do
+      %table
+        %thead
+          %tr
+            %th.name Name
+            %th.email Email
+            %th.actions Actions
+
+        %tbody
+          - for partner in @partners
+            %tr{:class => cycle("odd", "even")}
+              %td.name= link_to partner.full_name, partner
+              %td.email= partner.email =~ /example.com/i ? "&nbsp;" : partner.email
+              %td.actions= link_to "Delete", partner, :method => :delete    
+
+  .button= link_to "Add a new partner", new_partner_path
     
 - content_for :sidebar do
   = render '/dashboards/account_details'

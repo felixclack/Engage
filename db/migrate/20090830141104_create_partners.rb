@@ -1,7 +1,7 @@
 class CreatePartners < ActiveRecord::Migration
   def self.up
     create_table :partners do |t|
-      t.string      :title
+      t.references  :title
       t.string      :first_name
       t.string      :middle_names
       t.string      :last_name
@@ -18,6 +18,8 @@ class CreatePartners < ActiveRecord::Migration
       t.string      :twitter
       t.string      :facebook
       t.date        :dob
+      t.references  :gender
+      t.string      :state
       t.timestamps
     end
     
