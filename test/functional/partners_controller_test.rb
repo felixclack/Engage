@@ -85,6 +85,32 @@ class PartnersControllerTest < ActionController::TestCase
       should_assign_to(:partner) { @partner }
     end
     
+    context "PUT :update with valid params" do
+      setup do
+        @partner = Factory(:partner, :account => @account, :creator => @user)
+        put :update, :id => @partner.id, :partner => {:full_name => 'New Name'}
+      end
+
+      should_redirect_to('show partner path') { partner_path(@partner) }
+      
+      should "rename partner with 'New Name'" do
+        assert_equal('New Name', assigns(:partner).full_name)
+      end
+      
+    end
+    
+    context "PUT :update with invalid params" do
+      setup do
+        @partner = Factory(:partner, :account => @account, :creator => @user)
+        put :update, :id => @partner.id, :partner => {:full_name => ''}
+      end
+
+      should_render_template :edit
+      should_set_the_flash_to /error/
+    end
+    
+    
+    
   end
 
 end

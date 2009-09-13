@@ -1,7 +1,7 @@
 class PartnersController < ApplicationController
   
   before_filter :authenticate
-  before_filter :load_partner, :only => [:show, :edit]
+  before_filter :load_partner, :only => [:show, :edit, :update]
   
   def index
     @partners = current_account.partners.paginate(:page => params[:page])
@@ -30,6 +30,18 @@ class PartnersController < ApplicationController
   end
   
   def edit
+  end
+  
+  def update
+    @partner.attributes = params[:partner]
+    
+    if @partner.invalid?
+      flash[:error] = 'There was an error'
+      render :edit and return
+    end
+    
+    @partner.save!
+    redirect_to @partner
   end
   
   protected

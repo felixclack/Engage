@@ -3,7 +3,7 @@
 
   - semantic_form_for :session, :url => session_path do |form|
     = form.input :email
-    = form.input :password
+    = form.input :password, :as => :password
     
     = form.check_box :remember_me
     = form.label :remember_me

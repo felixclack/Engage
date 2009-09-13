@@ -23,7 +23,7 @@ class PartnerTest < ActiveSupport::TestCase
     @partner.invalid?.should be(true)
   end
   
-  should_allow_mass_assignment_of :full_name, :mobile_phone, :home_phone, :email, :title, :twitter, :facebook, :dob, :gender
+  should_allow_mass_assignment_of :full_name, :mobile_phone, :home_phone, :email, :title, :title_id, :twitter, :facebook, :dob, :gender, :gender_id
   should_not_allow_mass_assignment_of :account, :created_by
   
   should_belong_to :account

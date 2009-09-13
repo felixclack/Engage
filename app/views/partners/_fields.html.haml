@@ -1,5 +1,5 @@
 - form.inputs :name => "Essential info" do
-  = form.input :title,    :collection => Title.select_options(:order => "created_at ASC"), :required => false
+  = form.input :title, :collection => Title.select_options(:order => "created_at ASC"), :required => false
   = form.input :full_name
   = form.input :email
 

@@ -28,7 +28,7 @@
 class Partner < ActiveRecord::Base
   include AASM
   
-  attr_accessible :full_name, :email, :mobile_phone, :home_phone, :title, :twitter, :facebook, :dob, :title, :gender
+  attr_accessible :full_name, :email, :mobile_phone, :home_phone, :title, :twitter, :facebook, :dob, :title, :title_id, :gender, :gender_id
   
   acts_as_human :require_last_name => false
   
