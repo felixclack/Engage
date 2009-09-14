@@ -31,6 +31,8 @@ class PartnerTest < ActiveSupport::TestCase
   should_belong_to :title
   should_belong_to :gender
   
+  should_have_many :notes, :dependent => :destroy
+  
   should_have_attached_file :avatar
   
   context "deleting a partner" do

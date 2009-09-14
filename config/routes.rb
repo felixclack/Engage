@@ -1,8 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
-  
+
   map.resource  :dashboard, :only => :show  
   map.resources :users
-  map.resources :partners
+  map.resources :partners, :has_many => :notes
   map.resources :accounts,  :has_many => :users
 
   map.with_options :controller => 'pages' do |page|

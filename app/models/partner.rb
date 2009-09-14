@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090903180253
+# Schema version: 20090914231505
 #
 # Table name: partners
 #
@@ -21,6 +21,8 @@
 #  twitter             :string(255)
 #  facebook            :string(255)
 #  dob                 :date
+#  gender_id           :integer(4)
+#  state               :string(255)
 #  created_at          :datetime
 #  updated_at          :datetime
 #
@@ -36,6 +38,8 @@ class Partner < ActiveRecord::Base
   belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
   belongs_to :title
   belongs_to :gender
+  
+  has_many :notes, :dependent => :destroy
   
   validates_presence_of :account
   validates_presence_of :creator

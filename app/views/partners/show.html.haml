@@ -1,12 +1,26 @@
 - @page_title = @partner.full_name
 
 %section#notes
+  %h1 Notes
+  %ul
+    %li.new
+      - semantic_form_for [@partner, @note] do |form|
+        = render :partial => 'notes/fields', :locals => {:form => form}
+        %button Add note
+    - for note in @partner.notes.reverse do
+      %li
+        = note.body
+        %span #{note.creator.full_name} on #{note.created_at.to_s}
+    
         
 - content_for :sidebar do
   %section.contact_details
     %h1.name= h @partner.full_name
     = image_tag @partner.avatar.url(:thumb)
     %dl
+      %dt DOB:
+      %dd= @partner.dob
+      
       %dt Email:&nbsp;
       %dd= mail_to @partner.email unless @partner.email =~ /example.com/i
       - %w(mobile_phone home_phone twitter facebook).each do |value|

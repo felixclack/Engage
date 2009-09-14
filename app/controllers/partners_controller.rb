@@ -27,6 +27,7 @@ class PartnersController < ApplicationController
   end
   
   def show
+    @note = Note.new
   end
   
   def edit
