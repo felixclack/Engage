@@ -1,7 +1,7 @@
 class PartnersController < ApplicationController
   
   before_filter :authenticate
-  before_filter :load_partner, :only => [:show, :edit, :update]
+  before_filter :load_partner, :only => [:show, :edit, :update, :destroy]
   
   def index
     @partners = current_account.partners.paginate(:page => params[:page])
@@ -42,6 +42,11 @@ class PartnersController < ApplicationController
     
     @partner.save!
     redirect_to @partner
+  end
+  
+  def destroy
+    @partner.destroy
+    redirect_to partners_url
   end
   
   protected

@@ -5,6 +5,7 @@ class PartnersControllerTest < ActionController::TestCase
   def setup
     @user = Factory(:user)
     @account = @user.account
+    @partner = Factory(:partner, :account => @account, :creator => @user)
   end
   
   context "as a signed in user" do
@@ -57,7 +58,6 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "GET :index" do
       setup do
-        @partner = Factory(:partner, :account => @account, :creator => @user)
         get :index
       end
 
@@ -67,7 +67,6 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "GET :show" do
       setup do
-        @partner = Factory(:partner, :account => @account, :creator => @user)
         get :show, :id => @partner.id
       end
 
@@ -77,7 +76,6 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "GET :edit" do
       setup do
-        @partner = Factory(:partner, :account => @account, :creator => @user)
         get :edit, :id => @partner.id
       end
 
@@ -87,7 +85,6 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "PUT :update with valid params" do
       setup do
-        @partner = Factory(:partner, :account => @account, :creator => @user)
         put :update, :id => @partner.id, :partner => {:full_name => 'New Name'}
       end
 
@@ -101,7 +98,6 @@ class PartnersControllerTest < ActionController::TestCase
     
     context "PUT :update with invalid params" do
       setup do
-        @partner = Factory(:partner, :account => @account, :creator => @user)
         put :update, :id => @partner.id, :partner => {:full_name => ''}
       end
 
@@ -109,6 +105,14 @@ class PartnersControllerTest < ActionController::TestCase
       should_set_the_flash_to /error/
     end
     
+    context "DELETE :destroy" do
+      setup do
+        delete :destroy, :id => @partner.id
+      end
+
+      should_change("the partner count", :by => -1) { Partner.count }
+      should_redirect_to("index partners url") { partners_path }
+    end
     
     
   end
