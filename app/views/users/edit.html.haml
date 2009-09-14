@@ -1,0 +1,9 @@
+%section
+  %h1= @user.full_name
+  
+  - semantic_form_for @user do |form|
+    = render :partial => "fields", :locals => {:form => form}
+    = form.buttons
+
+- content_for :sidebar do
+  = render 'dashboards/account_details'

@@ -1,0 +1,31 @@
+%section
+  %h1 Core Team
+  
+  - if @users.empty?
+    %h2 There are no core team members in this account yet.
+
+  - else
+
+    %ul#search
+      - ('A'..'Z').each do |letter|
+        = letter
+
+    - paginated_section @users do
+      %table
+        %thead
+          %tr
+            %th.name Name
+            %th.email Email
+            %th.actions Actions
+
+        %tbody
+          - for user in @users
+            %tr{:class => cycle("odd", "even")}
+              %td.name= link_to user.full_name, user
+              %td.email= user.email =~ /example.com/i ? "&nbsp;" : user.email
+              %td.actions= link_to "Delete", user, :method => :delete    
+
+  .button= link_to "Add a new user", new_user_path
+    
+- content_for :sidebar do
+  = render '/dashboards/account_details'

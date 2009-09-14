@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   
   before_filter :authenticate
+  before_filter :load_user, :only => [:show, :edit, :update]
+  
+  def index
+    @users = current_account.users.paginate(:page => params[:page])
+  end
 
   def new
     if params[:account_id]
@@ -27,5 +32,28 @@ class UsersController < ApplicationController
     @user.save!
     redirect_to dashboard_url
   end
+  
+  def show
+  end
+  
+  def edit
+  end
+  
+  def update
+    @user.attributes = params[:user]
+    
+    if @user.invalid?
+      flash[:error] = "There was a problem"
+      render :edit and return
+    end
+    
+    @user.save!
+    redirect_to @user
+  end
+  
+  private
+    def load_user
+      @user = current_account.users.find(params[:id])
+    end
   
 end

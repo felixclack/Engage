@@ -26,7 +26,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
   
-  attr_accessible :full_name
+  attr_accessible :full_name, :admin
   
   belongs_to :account
   

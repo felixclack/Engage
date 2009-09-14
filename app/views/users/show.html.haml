@@ -1,0 +1,14 @@
+- @page_title = @user.full_name
+
+%section#notes
+        
+- content_for :sidebar do
+  %section.contact_details
+    %h1.name= h @user.full_name
+    = image_tag @user.avatar.url(:thumb)
+    %dl
+      %dt Email:&nbsp;
+      %dd= mail_to @user.email unless @user.email =~ /example.com/i
+        
+    = link_to "Edit", edit_user_path(@user)
+    = link_to "Delete", @user, :method => :delete, :confirm => "Are you sure?"    
