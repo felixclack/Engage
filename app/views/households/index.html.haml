@@ -1,24 +1,26 @@
-%h1 Listing Households
+%section
+  %h1 Listing Households
 
-%table
-  %tr
-    %th Street
-    %th Town
-    %th County
-    %th Postcode
-    %th Country
-    %th Account
+  %ul#search
+    - ('A'..'Z').each do |letter|
+      = letter
 
-  - for household in @households
-    %tr
-      %td= h household.street
-      %td= h household.town
-      %td= h household.county
-      %td= h household.postcode
-      %td= h household.country
-      %td= h household.account_id
-      %td= link_to 'Show', household
-      %td= link_to 'Edit', edit_household_path(household)
-      %td= link_to 'Destroy', household, :confirm => 'Are you sure?', :method => :delete
+  - paginated_section @users do
+  
+    %table
+      - for household in @households
+        %tr{:class => cycle("odd", "even")}
+          %td= h household.street
+          %td= h household.town
+          %td= h household.county
+          %td= h household.postcode
+          %td= h household.country
+          %td
+            = link_to 'Show', household
+            = link_to 'Edit', edit_household_path(household)
+            = link_to 'Destroy', household, :confirm => 'Are you sure?', :method => :delete
 
-%p= link_to 'New Household', new_household_path
+  .button= link_to 'New Household', new_household_path
+
+- content_for :sidebar do
+  = render '/dashboards/account_details'

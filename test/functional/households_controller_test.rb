@@ -39,8 +39,26 @@ class HouseholdsControllerTest < ActionController::TestCase
         delete :destroy, :id => @household.to_param
       end
 
-      should_change("the number of households", :by => -1) { Household.count }
+      should_destroy :household
       should_redirect_to("households index") { "/households" }
+    end
+    
+    context "on GET :new" do
+      setup do
+        get :new
+      end
+
+      should_render_template :new
+      should_assign_to :household, :class => Household
+    end
+    
+    context "on POST :create" do
+      setup do
+        post :create, :household => {:address => "22 Youens Crescent, Newton Aycliffe, DL5 4ZE"}
+      end
+      
+      should_create :household
+      should_redirect_to("show household") { "/households/#{assigns(:household).to_param}" }
     end
     
     

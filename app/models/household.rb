@@ -25,7 +25,12 @@ class Household < ActiveRecord::Base
                 %w(county county), 
                 %w(postcode postcode),
                 %w(country country)
-              ]
+              ],
+              :converter => Proc.new {|value| 
+                street, town, county, postcode, country = *value.split(",")
+                Address.new(street, town, county, postcode, country) 
+              },
+              :allow_nil => true
               
   belongs_to :account
   
