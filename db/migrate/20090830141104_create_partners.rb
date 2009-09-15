@@ -20,6 +20,7 @@ class CreatePartners < ActiveRecord::Migration
       t.date        :dob
       t.references  :gender
       t.string      :state
+      t.references  :household
       t.timestamps
     end
     

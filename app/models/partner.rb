@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20090914231505
+# Schema version: 20090915215305
 #
 # Table name: partners
 #
@@ -23,6 +23,7 @@
 #  dob                 :date
 #  gender_id           :integer(4)
 #  state               :string(255)
+#  household_id        :integer(4)
 #  created_at          :datetime
 #  updated_at          :datetime
 #
