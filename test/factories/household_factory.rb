@@ -4,5 +4,5 @@ Factory.define :household do |household|
   household.county 'Co. Durham'
   household.postcode 'DL5 4ZE'
   household.country 'UK'
-  household.associations :account
+  household.association :account
 end

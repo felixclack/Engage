@@ -13,6 +13,6 @@ class AccountTest < ActiveSupport::TestCase
   
   should_allow_mass_assignment_of :name
   
-  should_have_many :users, :partners
+  should_have_many :users, :partners, :households
   
 end

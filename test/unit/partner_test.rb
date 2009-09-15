@@ -30,6 +30,7 @@ class PartnerTest < ActiveSupport::TestCase
   should_belong_to :creator
   should_belong_to :title
   should_belong_to :gender
+  should_belong_to :household
   
   should_have_many :notes, :dependent => :destroy
   

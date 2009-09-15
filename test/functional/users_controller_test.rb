@@ -33,13 +33,13 @@ class UsersControllerTest < ActionController::TestCase
       end
     end
   
-    context "on POST :create with :account_id" do
+    context "on POST :create" do
       setup do
-        post :create, :user => Factory.attributes_for(:another_user), :account_id => @account.id
+        post :create, :user => Factory.attributes_for(:another_user)
       end
     
       should_change("the user count", :by => 1) { User.count }
-      should_redirect_to("dashboard") { '/dashboard' }
+      should_redirect_to("users index") { '/users' }
     end
     
     context "on GET :index" do

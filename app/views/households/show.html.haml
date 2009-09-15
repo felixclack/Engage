@@ -1,0 +1,18 @@
+%dl
+  %dt Street
+  %dd= h @household.street
+  %dt Town
+  %dd= h @household.town
+  %dt County
+  %dd= h @household.county
+  %dt Postcode
+  %dd= h @household.postcode
+  %dt Country
+  %dd= h @household.country
+  %dt Account
+  %dd= h @household.account_id
+
+%p
+  = link_to 'Edit', edit_household_path(@household)
+  |
+  = link_to 'Back', households_path

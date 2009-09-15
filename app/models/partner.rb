@@ -39,6 +39,7 @@ class Partner < ActiveRecord::Base
   belongs_to :creator, :class_name => "User", :foreign_key => "created_by"
   belongs_to :title
   belongs_to :gender
+  belongs_to :household
   
   has_many :notes, :dependent => :destroy
   

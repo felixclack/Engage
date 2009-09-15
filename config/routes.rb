@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
+  map.resources :households
   map.resource  :dashboard, :only => :show  
   map.resources :users
   map.resources :partners, :has_many => :notes

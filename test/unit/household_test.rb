@@ -5,4 +5,8 @@ class HouseholdTest < ActiveSupport::TestCase
   
   should_allow_mass_assignment_of :address
   should_not_allow_mass_assignment_of :account
+  
+  should_belong_to :account
+  
+  should_have_many :partners
 end

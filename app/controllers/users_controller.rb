@@ -17,12 +17,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    if params[:account_id]
-      @account = Account.find(params[:account_id])
-      @user = @account.users.build(params[:user])
-    else
-      @user = User.new(params[:user])
-    end
+    @user = current_account.users.build(params[:user])
     
     if @user.invalid?
       flash[:error] = "Something went wrong"
@@ -30,7 +25,7 @@ class UsersController < ApplicationController
     end
     
     @user.save!
-    redirect_to dashboard_url
+    redirect_to users_url
   end
   
   def show

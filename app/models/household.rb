@@ -26,4 +26,8 @@ class Household < ActiveRecord::Base
                 %w(postcode postcode),
                 %w(country country)
               ]
+              
+  belongs_to :account
+  
+  has_many :partners
 end

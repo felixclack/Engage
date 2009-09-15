@@ -1,0 +1,24 @@
+%h1 Listing Households
+
+%table
+  %tr
+    %th Street
+    %th Town
+    %th County
+    %th Postcode
+    %th Country
+    %th Account
+
+  - for household in @households
+    %tr
+      %td= h household.street
+      %td= h household.town
+      %td= h household.county
+      %td= h household.postcode
+      %td= h household.country
+      %td= h household.account_id
+      %td= link_to 'Show', household
+      %td= link_to 'Edit', edit_household_path(household)
+      %td= link_to 'Destroy', household, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to 'New Household', new_household_path
